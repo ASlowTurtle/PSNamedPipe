@@ -8,7 +8,9 @@
 $pipeName = "PSNamedPipe"
 $direction = 2
 # We only want to connect to pipes the same user created:
-# This only seems to work in powershell 7
+# This works in powershell 7.4 and should work from Powershell 6.1 onwards (because it's only available since .NET Core 2.1)
+# Find the .NET version used in the specific powershell version here:
+# https://learn.microsoft.com/en-us/powershell/scripting/whats-new/differences-from-windows-powershell?view=powershell-7.4
 $options = [System.IO.Pipes.PipeOptions]536870912
 
 #region Client
